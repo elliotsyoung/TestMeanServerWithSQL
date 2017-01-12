@@ -1,5 +1,6 @@
 var connection = require('../config/mysql');
 module.exports = function(app) {
+  //GET /users
   app.get('/users', function(req, res){
     console.log("request: get /");
     query = "select * from users"
@@ -12,6 +13,8 @@ module.exports = function(app) {
       }
     })
   })
+  //END GET /users
+  //POST /users
   app.post('/users', function(req, res){
     console.log("request: post /users");
     console.log(req.body.email, req.body.password);
@@ -29,4 +32,5 @@ module.exports = function(app) {
       }
     })
   })
+  //END POST /users
 }
